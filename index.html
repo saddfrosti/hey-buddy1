@@ -1,9 +1,10 @@
+```html id="f8k2mv"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Bouquet</title>
+<title>Night Flowers</title>
 
 <style>
 
@@ -14,139 +15,253 @@
 }
 
 body{
-    background:#f7f3ee;
+    overflow:hidden;
     height:100vh;
+    background:
+    radial-gradient(circle at center,
+    #07132b 0%,
+    #020611 70%,
+    #000 100%);
+    
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden;
-    font-family:'Courier New', monospace;
 }
 
-/* CARD */
+/* STARS */
 
-.card{
-    width:430px;
-    height:850px;
-    background:white;
-    border-radius:14px;
-    position:relative;
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
     overflow:hidden;
+}
 
-    box-shadow:
-    0 15px 40px rgba(0,0,0,0.15);
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
 }
 
 /* FLOWER AREA */
 
-.bouquet{
+.scene{
     position:relative;
-    width:100%;
-    height:480px;
+    width:100vw;
+    height:100vh;
 }
 
-/* BACK CIRCLE */
+/* GRASS */
 
-.circle{
+.grass{
     position:absolute;
-    width:420px;
-    height:420px;
-    background:#efe7de;
-    border-radius:50%;
-    left:50%;
-    top:10px;
-    transform:translateX(-50%);
+    bottom:-20px;
+    width:140px;
+    height:240px;
+    border-radius:100px;
+    border-left:7px solid #2aff66;
+    transform-origin:bottom;
+    filter:blur(0.3px);
 }
 
-/* SVG */
-
-svg{
-    position:absolute;
-    width:100%;
-    height:100%;
-    z-index:2;
+.g1{
+    left:5%;
+    transform:rotate(-10deg);
 }
 
-/* NOTE */
+.g2{
+    left:15%;
+    height:200px;
+    transform:rotate(8deg);
+}
 
-.note{
+.g3{
+    left:75%;
+    height:220px;
+    transform:rotate(-8deg);
+}
+
+.g4{
+    left:88%;
+    height:250px;
+    transform:rotate(10deg);
+}
+
+/* FLOWERS */
+
+.flower{
     position:absolute;
-    width:330px;
-    background:#fffdf9;
-    border:2px solid #e8ddd1;
-
-    left:50%;
     bottom:120px;
-
-    transform:translateX(-50%);
-
-    padding:28px;
-
-    color:#222;
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* SIGNATURE */
-
-.signature{
-    margin-top:30px;
-    text-align:right;
-}
-
-/* BUTTON */
-
-button{
+.stem{
     position:absolute;
-    bottom:35px;
+    width:8px;
+    background:#3cff78;
+    border-radius:20px;
+    bottom:0;
     left:50%;
-
     transform:translateX(-50%);
+}
 
-    border:none;
+/* LEAVES */
 
-    background:
-    linear-gradient(
-    to right,
-    #ff5d8f,
-    #ff3d71);
+.leaf{
+    position:absolute;
+    width:60px;
+    height:28px;
+    background:#16c45b;
+    border-radius:60px 0;
+}
 
-    color:white;
+/* PETALS */
 
-    padding:18px 55px;
-
-    border-radius:40px;
-
-    font-size:28px;
-
-    cursor:pointer;
-
+.petal{
+    position:absolute;
+    width:42px;
+    height:28px;
+    background:#ffc0d9;
+    border-radius:50%;
     box-shadow:
-    0 10px 20px rgba(255,61,113,0.3);
-
-    transition:0.3s;
+    0 0 20px rgba(255,192,217,0.7);
 }
 
-button:hover{
-    transform:
-    translateX(-50%)
-    scale(1.05);
+.center{
+    position:absolute;
+    width:22px;
+    height:10px;
+    background:#fff3b0;
+    border-radius:50%;
 }
 
-/* HEARTS */
+/* FLOWER POSITIONS */
+
+.f1{
+    left:42%;
+    bottom:220px;
+}
+
+.f2{
+    left:48%;
+    bottom:280px;
+}
+
+.f3{
+    left:54%;
+    bottom:220px;
+}
+
+.f4{
+    left:60%;
+    bottom:250px;
+}
+
+.f5{
+    left:36%;
+    bottom:250px;
+}
+
+/* STEM HEIGHTS */
+
+.f1 .stem{
+    height:200px;
+}
+
+.f2 .stem{
+    height:260px;
+}
+
+.f3 .stem{
+    height:210px;
+}
+
+.f4 .stem{
+    height:240px;
+}
+
+.f5 .stem{
+    height:230px;
+}
+
+/* PETAL POSITIONS */
+
+.p1{
+    top:-10px;
+    left:10px;
+}
+
+.p2{
+    top:10px;
+    left:-5px;
+}
+
+.p3{
+    top:10px;
+    right:-5px;
+}
+
+.p4{
+    top:25px;
+    left:10px;
+}
+
+.center{
+    top:18px;
+    left:20px;
+}
+
+/* LEAVES */
+
+.l1{
+    left:-50px;
+    top:120px;
+    transform:rotate(-35deg);
+}
+
+.l2{
+    right:-50px;
+    top:160px;
+    transform:rotate(145deg);
+}
+
+/* FLOATING HEARTS */
 
 .heart{
     position:absolute;
-    color:#ff4d6d;
-    animation:float 4s linear forwards;
+    color:#ff7eb6;
+    font-size:30px;
+    animation:float 6s linear infinite;
+    opacity:0.8;
 }
 
-/* FLOAT */
+/* GLOW CIRCLES */
+
+.circle{
+    position:absolute;
+    border:2px solid rgba(255,192,217,0.4);
+    border-radius:50%;
+    animation:pulse 4s infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes sway{
+
+    0%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+
+    100%{
+        transform:rotate(-2deg);
+    }
+}
 
 @keyframes float{
 
@@ -161,24 +276,33 @@ button:hover{
     }
 }
 
+@keyframes pulse{
+
+    0%{
+        transform:scale(0.8);
+        opacity:0.2;
+    }
+
+    50%{
+        opacity:0.7;
+    }
+
+    100%{
+        transform:scale(1.4);
+        opacity:0;
+    }
+}
+
+.flower{
+    animation:sway 4s ease-in-out infinite;
+}
+
 /* MOBILE */
 
-@media(max-width:500px){
+@media(max-width:700px){
 
-    .card{
-        width:100%;
-        height:100vh;
-        border-radius:0;
-    }
-
-    .note{
-        width:82%;
-        font-size:16px;
-    }
-
-    button{
-        font-size:22px;
-        padding:15px 45px;
+    .flower{
+        transform:scale(0.9);
     }
 }
 
@@ -187,226 +311,192 @@ button:hover{
 
 <body>
 
-<div class="card">
+<div class="scene">
 
-<div class="bouquet">
+<!-- STARS -->
 
-<div class="circle"></div>
+<div class="stars"></div>
 
-<svg viewBox="0 0 500 500">
+<!-- GRASS -->
 
-<!-- LEAVES -->
+<div class="grass g1"></div>
+<div class="grass g2"></div>
+<div class="grass g3"></div>
+<div class="grass g4"></div>
 
-<g fill="#5c8d76">
+<!-- FLOWERS -->
 
-<ellipse cx="90" cy="170" rx="14" ry="35"
-transform="rotate(-30 90 170)"/>
+<div class="flower f1">
 
-<ellipse cx="120" cy="120" rx="14" ry="35"
-transform="rotate(-20 120 120)"/>
+<div class="stem"></div>
 
-<ellipse cx="420" cy="170" rx="14" ry="35"
-transform="rotate(30 420 170)"/>
+<div class="leaf l1"></div>
+<div class="leaf l2"></div>
 
-<ellipse cx="390" cy="120" rx="14" ry="35"
-transform="rotate(20 390 120)"/>
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
 
-<ellipse cx="90" cy="320" rx="14" ry="35"
-transform="rotate(-45 90 320)"/>
-
-<ellipse cx="410" cy="320" rx="14" ry="35"
-transform="rotate(45 410 320)"/>
-
-</g>
-
-<!-- RED ROSE -->
-
-<g>
-
-<circle cx="190" cy="100" r="55"
-fill="#d90429"/>
-
-<circle cx="190" cy="100" r="40"
-fill="#ef476f"/>
-
-<circle cx="190" cy="100" r="25"
-fill="#ff8fab"/>
-
-</g>
-
-<!-- SUNFLOWER -->
-
-<g>
-
-<circle cx="320" cy="110" r="65"
-fill="#ffbe0b"/>
-
-<circle cx="320" cy="110" r="35"
-fill="#5a3d2b"/>
-
-<g fill="#ffbe0b">
-
-<ellipse cx="320" cy="30" rx="16" ry="38"/>
-<ellipse cx="320" cy="190" rx="16" ry="38"/>
-
-<ellipse cx="240" cy="110" rx="38" ry="16"/>
-<ellipse cx="400" cy="110" rx="38" ry="16"/>
-
-<ellipse cx="265" cy="55" rx="16" ry="38"
-transform="rotate(-45 265 55)"/>
-
-<ellipse cx="375" cy="55" rx="16" ry="38"
-transform="rotate(45 375 55)"/>
-
-<ellipse cx="265" cy="165" rx="16" ry="38"
-transform="rotate(45 265 165)"/>
-
-<ellipse cx="375" cy="165" rx="16" ry="38"
-transform="rotate(-45 375 165)"/>
-
-</g>
-
-</g>
-
-<!-- PINK FLOWER -->
-
-<g>
-
-<circle cx="230" cy="200" r="65"
-fill="#ffcad4"/>
-
-<circle cx="230" cy="200" r="45"
-fill="#ff8fab"/>
-
-<circle cx="230" cy="200" r="20"
-fill="#fff0f3"/>
-
-</g>
-
-<!-- WHITE FLOWER -->
-
-<g>
-
-<circle cx="320" cy="280" r="55"
-fill="#edf6f9"/>
-
-<circle cx="320" cy="280" r="20"
-fill="#4361ee"/>
-
-</g>
-
-<!-- LILY -->
-
-<g fill="#ffc8dd">
-
-<ellipse cx="120" cy="290" rx="30" ry="70"/>
-<ellipse cx="170" cy="340" rx="30" ry="70"
-transform="rotate(60 170 340)"/>
-
-<ellipse cx="70" cy="340" rx="30" ry="70"
-transform="rotate(-60 70 340)"/>
-
-</g>
-
-<!-- ORANGE FLOWER -->
-
-<g>
-
-<circle cx="320" cy="380" r="50"
-fill="#fb8500"/>
-
-<circle cx="320" cy="380" r="28"
-fill="#ffd166"/>
-
-</g>
-
-<!-- PURPLE FLOWER -->
-
-<g fill="#7b2cbf">
-
-<ellipse cx="240" cy="430" rx="28" ry="70"/>
-<ellipse cx="240" cy="430" rx="28" ry="70"
-transform="rotate(72 240 430)"/>
-
-<ellipse cx="240" cy="430" rx="28" ry="70"
-transform="rotate(144 240 430)"/>
-
-<ellipse cx="240" cy="430" rx="28" ry="70"
-transform="rotate(216 240 430)"/>
-
-<ellipse cx="240" cy="430" rx="28" ry="70"
-transform="rotate(288 240 430)"/>
-
-</g>
-
-</svg>
+<div class="center"></div>
 
 </div>
 
-<div class="note">
+<div class="flower f2">
 
-Dear You,
+<div class="stem"></div>
 
-<br><br>
+<div class="leaf l1"></div>
+<div class="leaf l2"></div>
 
-These flowers are for you 🌸
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
 
-<br>
-
-Hope they make your day a little brighter 💖
-
-<div class="signature">
-
-Sincerely,
-
-<br>
-
-someone who cares
+<div class="center"></div>
 
 </div>
 
+<div class="flower f3">
+
+<div class="stem"></div>
+
+<div class="leaf l1"></div>
+<div class="leaf l2"></div>
+
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+
+<div class="center"></div>
+
 </div>
 
-<button onclick="love()">
+<div class="flower f4">
 
-Click Me 🤍
+<div class="stem"></div>
 
-</button>
+<div class="leaf l1"></div>
+<div class="leaf l2"></div>
+
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+
+<div class="center"></div>
+
+</div>
+
+<div class="flower f5">
+
+<div class="stem"></div>
+
+<div class="leaf l1"></div>
+<div class="leaf l2"></div>
+
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+
+<div class="center"></div>
+
+</div>
 
 </div>
 
 <script>
 
-function love(){
+/* STARS */
 
-    for(let i=0;i<30;i++){
+const stars =
+document.querySelector('.stars');
 
-        const heart =
-        document.createElement('div');
+for(let i=0;i<120;i++){
 
-        heart.classList.add('heart');
+    const star =
+    document.createElement('div');
 
-        heart.innerHTML = '❤';
+    star.classList.add('star');
 
-        heart.style.left =
-        Math.random() * window.innerWidth + 'px';
+    star.style.left =
+    Math.random()*100 + 'vw';
 
-        heart.style.top = '100%';
+    star.style.top =
+    Math.random()*100 + 'vh';
 
-        heart.style.fontSize =
-        Math.random() * 25 + 15 + 'px';
+    star.style.opacity =
+    Math.random();
 
-        document.body.appendChild(heart);
+    star.style.transform =
+    `scale(${Math.random()*2})`;
 
-        setTimeout(()=>{
+    stars.appendChild(star);
+}
 
-            heart.remove();
+/* FLOATING HEARTS */
 
-        },4000);
-    }
+function createHeart(){
+
+    const heart =
+    document.createElement('div');
+
+    heart.classList.add('heart');
+
+    heart.innerHTML='❤';
+
+    heart.style.left =
+    Math.random()*100 + 'vw';
+
+    heart.style.top =
+    '100vh';
+
+    heart.style.fontSize =
+    Math.random()*20+20+'px';
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },6000);
+}
+
+setInterval(createHeart,900);
+
+/* CIRCLES */
+
+for(let i=0;i<8;i++){
+
+    const circle =
+    document.createElement('div');
+
+    circle.classList.add('circle');
+
+    circle.style.width =
+    Math.random()*50+20+'px';
+
+    circle.style.height =
+    circle.style.width;
+
+    circle.style.left =
+    Math.random()*100+'vw';
+
+    circle.style.top =
+    Math.random()*100+'vh';
+
+    circle.style.animationDelay =
+    Math.random()*4+'s';
+
+    document.body.appendChild(circle);
 }
 
 </script>
 
 </body>
 </html>
+```
