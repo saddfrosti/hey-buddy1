@@ -1,67 +1,45 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>yoooo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoooo</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
     body {
+      margin: 0;
       height: 100vh;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
-    }
-
-    .background {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at top, rgba(255,255,255,0.3), transparent 60%);
-      z-index: 0;
+      background: linear-gradient(to bottom, #ffb6c1, #ffc0cb);
+      font-family: Arial, sans-serif;
     }
 
     .container {
-      position: relative;
-      z-index: 2;
       text-align: center;
     }
 
-    .title {
-      font-size: 4rem;
+    h1 {
       color: white;
-      text-shadow: 0 0 15px rgba(255,255,255,0.8);
-      margin-bottom: 10px;
-      animation: glow 2s infinite alternate;
+      font-size: 60px;
+      text-shadow: 0 0 15px white;
     }
 
-    .subtitle {
-      color: white;
-      margin-bottom: 40px;
-      font-size: 1.2rem;
-    }
-
-    .garden {
+    .flowers {
       display: flex;
+      gap: 50px;
+      margin-top: 40px;
       justify-content: center;
       align-items: flex-end;
-      gap: 80px;
-      margin-bottom: 50px;
     }
 
     .flower {
       position: relative;
       width: 120px;
       height: 250px;
-      animation: sway 4s ease-in-out infinite;
+      animation: sway 3s ease-in-out infinite;
     }
 
     .stem {
@@ -69,114 +47,65 @@
       width: 10px;
       height: 150px;
       background: green;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 55px;
       bottom: 0;
       border-radius: 10px;
     }
 
     .petal {
-      position: absolute;
       width: 60px;
       height: 60px;
+      background: hotpink;
       border-radius: 50%;
-      opacity: 0.95;
+      position: absolute;
     }
 
-    .flower1 .petal {
-      background: #ff69b4;
-    }
-
-    .flower2 .petal {
-      background: #ff1493;
-    }
-
-    .flower3 .petal {
-      background: #ff85c1;
-    }
-
-    .p1 {
-      top: 20px;
-      left: 30px;
-    }
-
-    .p2 {
-      top: 50px;
-      left: 0;
-    }
-
-    .p3 {
-      top: 50px;
-      left: 60px;
-    }
-
-    .p4 {
-      top: 80px;
-      left: 30px;
-    }
+    .p1 { top: 20px; left: 30px; }
+    .p2 { top: 50px; left: 0px; }
+    .p3 { top: 50px; left: 60px; }
+    .p4 { top: 80px; left: 30px; }
 
     .center {
-      position: absolute;
       width: 40px;
       height: 40px;
       background: yellow;
       border-radius: 50%;
-      top: 50px;
+      position: absolute;
+      top: 55px;
       left: 40px;
-      z-index: 5;
-      box-shadow: 0 0 15px yellow;
+      z-index: 2;
+      box-shadow: 0 0 20px yellow;
     }
 
     button {
+      margin-top: 40px;
       padding: 15px 30px;
       border: none;
       border-radius: 30px;
-      background: white;
-      color: #ff1493;
-      font-size: 1rem;
+      font-size: 18px;
       cursor: pointer;
+      background: white;
+      color: hotpink;
       transition: 0.3s;
-      box-shadow: 0 0 20px rgba(255,255,255,0.5);
     }
 
     button:hover {
       transform: scale(1.1);
-      background: #ff1493;
-      color: white;
     }
 
     #message {
-      margin-top: 20px;
       color: white;
-      font-size: 1.3rem;
-      text-shadow: 0 0 10px rgba(255,255,255,0.8);
+      margin-top: 20px;
+      font-size: 24px;
     }
 
     @keyframes sway {
-      0% {
-        transform: rotate(-3deg);
-      }
-
-      50% {
-        transform: rotate(3deg);
-      }
-
-      100% {
-        transform: rotate(-3deg);
-      }
+      0% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+      100% { transform: rotate(-3deg); }
     }
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px white;
-      }
-
-      to {
-        text-shadow: 0 0 30px white;
-      }
-    }
-
-    @keyframes floatUp {
+    @keyframes float {
       0% {
         transform: translateY(0);
         opacity: 1;
@@ -187,33 +116,17 @@
         opacity: 0;
       }
     }
-
-    @media (max-width: 768px) {
-      .garden {
-        gap: 20px;
-      }
-
-      .flower {
-        transform: scale(0.8);
-      }
-
-      .title {
-        font-size: 2.5rem;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <div class="background"></div>
-
   <div class="container">
-    <h1 class="title">🌸 Digital Flowers 🌸</h1>
-    
+    <h1> Digital Flowers </h1>
 
-    <div class="garden">
+    <div class="flowers">
 
-      <div class="flower flower1">
+      <div class="flower">
         <div class="stem"></div>
         <div class="petal p1"></div>
         <div class="petal p2"></div>
@@ -222,7 +135,7 @@
         <div class="center"></div>
       </div>
 
-      <div class="flower flower2">
+      <div class="flower">
         <div class="stem"></div>
         <div class="petal p1"></div>
         <div class="petal p2"></div>
@@ -231,7 +144,7 @@
         <div class="center"></div>
       </div>
 
-      <div class="flower flower3">
+      <div class="flower">
         <div class="stem"></div>
         <div class="petal p1"></div>
         <div class="petal p2"></div>
@@ -242,38 +155,41 @@
 
     </div>
 
-    <button id="loveBtn">Click Me </button>
-    <p id="message"></p>
+    <button onclick="showLove()">Click Me </button>
+
+    <div id="message"></div>
+
   </div>
 
   <script>
-    const button = document.getElementById('loveBtn');
-    const message = document.getElementById('message');
-
     const messages = [
-      
-      'These flowers are for you ',
-      'Hope your day is beautiful ',
-      'Sending digital love ',
-      'You deserve flowers every day '
+      "These flowers are for you ",
+      "Hope your day is beautiful ",
+      "Sending digital love ",
+      "You deserve flowers every day buttt youll get real ones soon"
     ];
 
-    button.addEventListener('click', () => {
-      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-      message.textContent = randomMessage;
+    function showLove() {
+      const msg = document.getElementById("message");
 
-      createHeart();
-    });
+      msg.innerHTML =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      for(let i = 0; i < 10; i++) {
+        createHeart();
+      }
+    }
 
     function createHeart() {
-      const heart = document.createElement('div');
+      const heart = document.createElement("div");
 
-      
-      heart.style.position = 'absolute';
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.top = '100%';
-      heart.style.fontSize = '2rem';
-      heart.style.animation = 'floatUp 4s linear forwards';
+      heart.innerHTML = "❤️";
+
+      heart.style.position = "absolute";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = "100%";
+      heart.style.fontSize = "30px";
+      heart.style.animation = "float 4s linear forwards";
 
       document.body.appendChild(heart);
 
