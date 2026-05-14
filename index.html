@@ -3,160 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hey buddy</title>
+<title>Digital Bouquet</title>
 
 <style>
 
-*{
+body{
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    height:100vh;
-    overflow:hidden;
+    background:#f7f4ef;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#000;
+    height:100vh;
+    overflow:hidden;
+    font-family:'Courier New', monospace;
 }
 
-/* BACKGROUND GLOW */
+/* PAPER CARD */
 
-.background{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:
-    radial-gradient(circle at center,
-    rgba(255,0,100,0.15),
-    transparent 60%);
-}
-
-/* MAIN */
-
-.container{
+.card{
+    width:420px;
+    height:760px;
+    background:white;
+    border-radius:10px;
     position:relative;
-    z-index:2;
-    text-align:center;
-}
-
-.title{
-    color:white;
-    font-size:70px;
-    margin-bottom:20px;
-    text-shadow:0 0 20px hotpink;
-    animation:glow 2s infinite alternate;
-}
-
-.subtitle{
-    color:#ff9ecf;
-    margin-bottom:50px;
-    font-size:22px;
-    letter-spacing:3px;
-}
-
-/* BOUQUET */
-
-.bouquet{
-    position:relative;
-    width:500px;
-    height:500px;
-    margin:auto;
-}
-
-/* WRAP */
-
-.wrap{
-    position:absolute;
-    bottom:0;
-    left:50%;
-    transform:translateX(-50%);
-    width:260px;
-    height:260px;
-    background:linear-gradient(
-    to bottom,
-    rgba(40,40,40,0.8),
-    rgba(0,0,0,0.95));
-    
-    clip-path:polygon(
-    50% 100%,
-    0 0,
-    100% 0
-    );
-
-    border:2px solid rgba(255,255,255,0.1);
+    overflow:hidden;
 
     box-shadow:
-    0 0 30px rgba(255,0,100,0.3);
+    0 0 40px rgba(0,0,0,0.15);
+}
+
+/* FLOWERS AREA */
+
+.bouquet{
+    position:absolute;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    width:350px;
+    height:430px;
+}
+
+/* FLOWER BASE */
+
+.flower{
+    position:absolute;
+    border-radius:50%;
+    animation:float 4s ease-in-out infinite;
+}
+
+/* SUNFLOWER */
+
+.sunflower{
+    width:120px;
+    height:120px;
+    background:
+    radial-gradient(circle,
+    #6d3d00 20%,
+    #ffb300 21%,
+    #ffd54f 60%,
+    #ffca28 100%);
+
+    top:0;
+    right:40px;
+
+    box-shadow:
+    0 0 20px rgba(255,200,0,0.5);
 }
 
 /* ROSES */
 
-.rose{
-    position:absolute;
-    width:130px;
-    height:130px;
-    border-radius:50%;
+.rose1{
+    width:90px;
+    height:90px;
+
     background:
     radial-gradient(circle,
-    #ff7eb6 0%,
-    #ff0066 70%,
-    #70002e 100%);
-    
-    box-shadow:
-    0 0 25px rgba(255,0,120,0.6);
+    #ffb3b3,
+    #ff4d6d,
+    #c9184a);
 
-    animation:sway 4s ease-in-out infinite;
+    top:20px;
+    left:40px;
 }
 
-/* PETAL EFFECT */
+.rose2{
+    width:85px;
+    height:85px;
 
-.rose::before,
-.rose::after{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,0.15);
-}
+    background:
+    radial-gradient(circle,
+    #ffc2d1,
+    #ff758f,
+    #ff0a54);
 
-.rose::before{
-    transform:scale(0.75);
-}
-
-.rose::after{
-    transform:scale(0.5);
-}
-
-/* FLOWER POSITIONS */
-
-.r1{
-    top:80px;
-    left:180px;
-}
-
-.r2{
     top:140px;
-    left:90px;
+    right:40px;
 }
 
-.r3{
-    top:140px;
-    right:90px;
+.rose3{
+    width:100px;
+    height:100px;
+
+    background:
+    radial-gradient(circle,
+    #ffd6e0,
+    #ff5c8a,
+    #d90429);
+
+    top:250px;
+    left:80px;
 }
 
-.r4{
+/* BLUE FLOWER */
+
+.blue{
+    width:90px;
+    height:90px;
+
+    background:
+    radial-gradient(circle,
+    #dff6ff,
+    #7bdff2,
+    #4361ee);
+
     top:220px;
+    right:120px;
+}
+
+/* PURPLE FLOWER */
+
+.purple{
+    width:100px;
+    height:100px;
+
+    background:
+    radial-gradient(circle,
+    #efe1ff,
+    #b388eb,
+    #7b2cbf);
+
+    top:320px;
     left:150px;
 }
 
-.r5{
-    top:220px;
-    right:150px;
+/* SMALL FLOWERS */
+
+.small1,
+.small2,
+.small3{
+
+    width:55px;
+    height:55px;
+
+    background:
+    radial-gradient(circle,
+    white,
+    #ffd6ff,
+    #ff99c8);
+
+}
+
+.small1{
+    top:150px;
+    left:10px;
+}
+
+.small2{
+    top:280px;
+    right:20px;
+}
+
+.small3{
+    top:80px;
+    left:150px;
 }
 
 /* LEAVES */
@@ -164,92 +184,97 @@ body{
 .leaf{
     position:absolute;
     width:70px;
-    height:35px;
-    background:linear-gradient(
-    to right,
-    #00ff66,
-    #006b2d);
-    
-    border-radius:50px 0 50px 0;
-    opacity:0.9;
+    height:30px;
+    background:#4f772d;
+    border-radius:50px;
+    opacity:0.8;
 }
 
 .l1{
-    top:250px;
-    left:80px;
-    transform:rotate(-25deg);
+    top:120px;
+    left:0;
+    transform:rotate(-40deg);
 }
 
 .l2{
-    top:260px;
-    right:80px;
-    transform:rotate(25deg);
+    top:180px;
+    right:0;
+    transform:rotate(35deg);
 }
 
 .l3{
     top:320px;
-    left:180px;
-    transform:rotate(-15deg);
+    left:20px;
+    transform:rotate(-20deg);
 }
 
 .l4{
-    top:320px;
-    right:180px;
-    transform:rotate(15deg);
+    top:350px;
+    right:30px;
+    transform:rotate(20deg);
 }
 
-/* BUTTON */
+/* NOTE */
 
-button{
-    margin-top:40px;
-    padding:16px 40px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(
-    to right,
-    #ff0066,
-    #ff4da6);
-
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-
-    box-shadow:
-    0 0 20px rgba(255,0,100,0.5);
-
-    transition:0.3s;
+.note{
+    position:absolute;
+    bottom:60px;
+    left:50%;
+    transform:translateX(-50%);
+    width:320px;
+    background:white;
+    border:2px solid #ddd;
+    padding:25px;
+    font-size:22px;
+    color:#333;
+    line-height:1.7;
 }
 
-button:hover{
-    transform:scale(1.08);
-    box-shadow:
-    0 0 40px rgba(255,0,100,0.9);
-}
-
-#message{
-    margin-top:25px;
-    color:white;
-    font-size:28px;
-    text-shadow:0 0 15px hotpink;
+.signature{
+    margin-top:30px;
+    text-align:right;
 }
 
 /* HEARTS */
 
 .heart{
     position:absolute;
-    color:#ff4da6;
-    animation:float 4s linear forwards;
+    color:#ff4d6d;
+    animation:up 4s linear forwards;
+}
+
+/* BUTTON */
+
+button{
+    position:absolute;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+
+    background:#ff4d6d;
+    color:white;
+
+    font-size:18px;
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px rgba(255,77,109,0.5);
 }
 
 /* ANIMATIONS */
 
-@keyframes sway{
+@keyframes float{
+
     0%{
         transform:translateY(0px);
     }
 
     50%{
-        transform:translateY(-10px);
+        transform:translateY(-8px);
     }
 
     100%{
@@ -257,7 +282,8 @@ button:hover{
     }
 }
 
-@keyframes float{
+@keyframes up{
+
     0%{
         transform:translateY(0);
         opacity:1;
@@ -269,26 +295,25 @@ button:hover{
     }
 }
 
-@keyframes glow{
-    from{
-        text-shadow:0 0 15px hotpink;
-    }
+/* MOBILE */
 
-    to{
-        text-shadow:
-        0 0 35px hotpink,
-        0 0 60px #ff0066;
-    }
-}
+@media(max-width:500px){
 
-@media(max-width:700px){
-
-    .title{
-        font-size:45px;
+    .card{
+        width:100%;
+        height:100vh;
+        border-radius:0;
     }
 
     .bouquet{
-        transform:scale(0.75);
+        transform:
+        translateX(-50%)
+        scale(0.9);
+    }
+
+    .note{
+        width:80%;
+        font-size:18px;
     }
 }
 
@@ -297,97 +322,95 @@ button:hover{
 
 <body>
 
-<div class="background"></div>
-
-<div class="container">
-
-    <h1 class="title">🌹 Digital Bouquet 🌹</h1>
-
-    <p class="subtitle">
-        made with love
-    </p>
+<div class="card">
 
     <div class="bouquet">
 
-        <div class="wrap"></div>
+        <div class="flower sunflower"></div>
 
-        <div class="rose r1"></div>
-        <div class="rose r2"></div>
-        <div class="rose r3"></div>
-        <div class="rose r4"></div>
-        <div class="rose r5"></div>
+        <div class="flower rose1"></div>
+
+        <div class="flower rose2"></div>
+
+        <div class="flower rose3"></div>
+
+        <div class="flower blue"></div>
+
+        <div class="flower purple"></div>
+
+        <div class="flower small1"></div>
+
+        <div class="flower small2"></div>
+
+        <div class="flower small3"></div>
 
         <div class="leaf l1"></div>
+
         <div class="leaf l2"></div>
+
         <div class="leaf l3"></div>
+
         <div class="leaf l4"></div>
 
     </div>
 
-    <button onclick="showLove()">
-        Click Me ❤️
-    </button>
+    <div class="note">
 
-    <div id="message"></div>
+        Dear You 🌸
+
+        <br><br>
+
+        These flowers are for you.
+
+        <br>
+
+        Hope they make your day a little brighter 💖
+
+        <div class="signature">
+
+            — from me
+
+        </div>
+
+    </div>
+
+    <button onclick="love()">
+
+        Click Me ❤️
+
+    </button>
 
 </div>
 
 <script>
 
-const messages = [
+function love(){
 
-"These flowers are for you 🌹",
+    for(let i=0;i<25;i++){
 
-"You deserve the prettiest bouquet 💖",
+        const heart =
+        document.createElement('div');
 
-"Sending you digital flowers ❤️",
+        heart.classList.add('heart');
 
-"You make life beautiful 🌸",
+        heart.innerHTML = '❤';
 
-"A bouquet made with love 💐"
+        heart.style.left =
+        Math.random() * window.innerWidth + 'px';
 
-];
+        heart.style.top = '100%';
 
-function showLove(){
+        heart.style.fontSize =
+        Math.random() * 30 + 20 + 'px';
 
-    const msg =
-    document.getElementById("message");
+        document.body.appendChild(heart);
 
-    msg.innerHTML =
-    messages[Math.floor(Math.random()
-    * messages.length)];
+        setTimeout(()=>{
 
-    for(let i=0;i<20;i++){
+            heart.remove();
 
-        createHeart();
-
+        },4000);
     }
-}
-
-function createHeart(){
-
-    const heart =
-    document.createElement("div");
-
-    heart.classList.add("heart");
-
-    heart.innerHTML = "❤";
-
-    heart.style.left =
-    Math.random() * window.innerWidth + "px";
-
-    heart.style.top = "100%";
-
-    heart.style.fontSize =
-    Math.random() * 30 + 20 + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },4000);
 }
 
 </script>
