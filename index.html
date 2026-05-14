@@ -7,232 +7,135 @@
 
 <style>
 
-body{
+*{
     margin:0;
     padding:0;
-    background:#f7f4ef;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f7f3ee;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
     overflow:hidden;
     font-family:'Courier New', monospace;
 }
 
-/* PAPER CARD */
+/* CARD */
 
 .card{
-    width:420px;
-    height:760px;
+    width:430px;
+    height:850px;
     background:white;
-    border-radius:10px;
+    border-radius:14px;
     position:relative;
     overflow:hidden;
 
     box-shadow:
-    0 0 40px rgba(0,0,0,0.15);
+    0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* FLOWERS AREA */
+/* FLOWER AREA */
 
 .bouquet{
-    position:absolute;
-    top:30px;
-    left:50%;
-    transform:translateX(-50%);
-    width:350px;
-    height:430px;
+    position:relative;
+    width:100%;
+    height:480px;
 }
 
-/* FLOWER BASE */
+/* BACK CIRCLE */
 
-.flower{
+.circle{
     position:absolute;
+    width:420px;
+    height:420px;
+    background:#efe7de;
     border-radius:50%;
-    animation:float 4s ease-in-out infinite;
+    left:50%;
+    top:10px;
+    transform:translateX(-50%);
 }
 
-/* SUNFLOWER */
+/* SVG */
 
-.sunflower{
-    width:120px;
-    height:120px;
-    background:
-    radial-gradient(circle,
-    #6d3d00 20%,
-    #ffb300 21%,
-    #ffd54f 60%,
-    #ffca28 100%);
-
-    top:0;
-    right:40px;
-
-    box-shadow:
-    0 0 20px rgba(255,200,0,0.5);
-}
-
-/* ROSES */
-
-.rose1{
-    width:90px;
-    height:90px;
-
-    background:
-    radial-gradient(circle,
-    #ffb3b3,
-    #ff4d6d,
-    #c9184a);
-
-    top:20px;
-    left:40px;
-}
-
-.rose2{
-    width:85px;
-    height:85px;
-
-    background:
-    radial-gradient(circle,
-    #ffc2d1,
-    #ff758f,
-    #ff0a54);
-
-    top:140px;
-    right:40px;
-}
-
-.rose3{
-    width:100px;
-    height:100px;
-
-    background:
-    radial-gradient(circle,
-    #ffd6e0,
-    #ff5c8a,
-    #d90429);
-
-    top:250px;
-    left:80px;
-}
-
-/* BLUE FLOWER */
-
-.blue{
-    width:90px;
-    height:90px;
-
-    background:
-    radial-gradient(circle,
-    #dff6ff,
-    #7bdff2,
-    #4361ee);
-
-    top:220px;
-    right:120px;
-}
-
-/* PURPLE FLOWER */
-
-.purple{
-    width:100px;
-    height:100px;
-
-    background:
-    radial-gradient(circle,
-    #efe1ff,
-    #b388eb,
-    #7b2cbf);
-
-    top:320px;
-    left:150px;
-}
-
-/* SMALL FLOWERS */
-
-.small1,
-.small2,
-.small3{
-
-    width:55px;
-    height:55px;
-
-    background:
-    radial-gradient(circle,
-    white,
-    #ffd6ff,
-    #ff99c8);
-
-}
-
-.small1{
-    top:150px;
-    left:10px;
-}
-
-.small2{
-    top:280px;
-    right:20px;
-}
-
-.small3{
-    top:80px;
-    left:150px;
-}
-
-/* LEAVES */
-
-.leaf{
+svg{
     position:absolute;
-    width:70px;
-    height:30px;
-    background:#4f772d;
-    border-radius:50px;
-    opacity:0.8;
-}
-
-.l1{
-    top:120px;
-    left:0;
-    transform:rotate(-40deg);
-}
-
-.l2{
-    top:180px;
-    right:0;
-    transform:rotate(35deg);
-}
-
-.l3{
-    top:320px;
-    left:20px;
-    transform:rotate(-20deg);
-}
-
-.l4{
-    top:350px;
-    right:30px;
-    transform:rotate(20deg);
+    width:100%;
+    height:100%;
+    z-index:2;
 }
 
 /* NOTE */
 
 .note{
     position:absolute;
-    bottom:60px;
+    width:330px;
+    background:#fffdf9;
+    border:2px solid #e8ddd1;
+
     left:50%;
+    bottom:120px;
+
     transform:translateX(-50%);
-    width:320px;
-    background:white;
-    border:2px solid #ddd;
-    padding:25px;
-    font-size:22px;
-    color:#333;
+
+    padding:28px;
+
+    color:#222;
+
+    font-size:18px;
+
     line-height:1.7;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.05);
 }
+
+/* SIGNATURE */
 
 .signature{
     margin-top:30px;
     text-align:right;
+}
+
+/* BUTTON */
+
+button{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border:none;
+
+    background:
+    linear-gradient(
+    to right,
+    #ff5d8f,
+    #ff3d71);
+
+    color:white;
+
+    padding:18px 55px;
+
+    border-radius:40px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 20px rgba(255,61,113,0.3);
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:
+    translateX(-50%)
+    scale(1.05);
 }
 
 /* HEARTS */
@@ -240,49 +143,12 @@ body{
 .heart{
     position:absolute;
     color:#ff4d6d;
-    animation:up 4s linear forwards;
+    animation:float 4s linear forwards;
 }
 
-/* BUTTON */
-
-button{
-    position:absolute;
-    bottom:10px;
-    left:50%;
-    transform:translateX(-50%);
-
-    padding:12px 35px;
-    border:none;
-    border-radius:30px;
-
-    background:#ff4d6d;
-    color:white;
-
-    font-size:18px;
-    cursor:pointer;
-
-    box-shadow:
-    0 0 15px rgba(255,77,109,0.5);
-}
-
-/* ANIMATIONS */
+/* FLOAT */
 
 @keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-@keyframes up{
 
     0%{
         transform:translateY(0);
@@ -305,15 +171,14 @@ button{
         border-radius:0;
     }
 
-    .bouquet{
-        transform:
-        translateX(-50%)
-        scale(0.9);
+    .note{
+        width:82%;
+        font-size:16px;
     }
 
-    .note{
-        width:80%;
-        font-size:18px;
+    button{
+        font-size:22px;
+        padding:15px 45px;
     }
 }
 
@@ -324,61 +189,189 @@ button{
 
 <div class="card">
 
-    <div class="bouquet">
+<div class="bouquet">
 
-        <div class="flower sunflower"></div>
+<div class="circle"></div>
 
-        <div class="flower rose1"></div>
+<svg viewBox="0 0 500 500">
 
-        <div class="flower rose2"></div>
+<!-- LEAVES -->
 
-        <div class="flower rose3"></div>
+<g fill="#5c8d76">
 
-        <div class="flower blue"></div>
+<ellipse cx="90" cy="170" rx="14" ry="35"
+transform="rotate(-30 90 170)"/>
 
-        <div class="flower purple"></div>
+<ellipse cx="120" cy="120" rx="14" ry="35"
+transform="rotate(-20 120 120)"/>
 
-        <div class="flower small1"></div>
+<ellipse cx="420" cy="170" rx="14" ry="35"
+transform="rotate(30 420 170)"/>
 
-        <div class="flower small2"></div>
+<ellipse cx="390" cy="120" rx="14" ry="35"
+transform="rotate(20 390 120)"/>
 
-        <div class="flower small3"></div>
+<ellipse cx="90" cy="320" rx="14" ry="35"
+transform="rotate(-45 90 320)"/>
 
-        <div class="leaf l1"></div>
+<ellipse cx="410" cy="320" rx="14" ry="35"
+transform="rotate(45 410 320)"/>
 
-        <div class="leaf l2"></div>
+</g>
 
-        <div class="leaf l3"></div>
+<!-- RED ROSE -->
 
-        <div class="leaf l4"></div>
+<g>
 
-    </div>
+<circle cx="190" cy="100" r="55"
+fill="#d90429"/>
 
-    <div class="note">
+<circle cx="190" cy="100" r="40"
+fill="#ef476f"/>
 
-        Dear You 🌸
+<circle cx="190" cy="100" r="25"
+fill="#ff8fab"/>
 
-        <br><br>
+</g>
 
-        These flowers are for you.
+<!-- SUNFLOWER -->
 
-        <br>
+<g>
 
-        Hope they make your day a little brighter 💖
+<circle cx="320" cy="110" r="65"
+fill="#ffbe0b"/>
 
-        <div class="signature">
+<circle cx="320" cy="110" r="35"
+fill="#5a3d2b"/>
 
-            — from me
+<g fill="#ffbe0b">
 
-        </div>
+<ellipse cx="320" cy="30" rx="16" ry="38"/>
+<ellipse cx="320" cy="190" rx="16" ry="38"/>
 
-    </div>
+<ellipse cx="240" cy="110" rx="38" ry="16"/>
+<ellipse cx="400" cy="110" rx="38" ry="16"/>
 
-    <button onclick="love()">
+<ellipse cx="265" cy="55" rx="16" ry="38"
+transform="rotate(-45 265 55)"/>
 
-        Click Me ❤️
+<ellipse cx="375" cy="55" rx="16" ry="38"
+transform="rotate(45 375 55)"/>
 
-    </button>
+<ellipse cx="265" cy="165" rx="16" ry="38"
+transform="rotate(45 265 165)"/>
+
+<ellipse cx="375" cy="165" rx="16" ry="38"
+transform="rotate(-45 375 165)"/>
+
+</g>
+
+</g>
+
+<!-- PINK FLOWER -->
+
+<g>
+
+<circle cx="230" cy="200" r="65"
+fill="#ffcad4"/>
+
+<circle cx="230" cy="200" r="45"
+fill="#ff8fab"/>
+
+<circle cx="230" cy="200" r="20"
+fill="#fff0f3"/>
+
+</g>
+
+<!-- WHITE FLOWER -->
+
+<g>
+
+<circle cx="320" cy="280" r="55"
+fill="#edf6f9"/>
+
+<circle cx="320" cy="280" r="20"
+fill="#4361ee"/>
+
+</g>
+
+<!-- LILY -->
+
+<g fill="#ffc8dd">
+
+<ellipse cx="120" cy="290" rx="30" ry="70"/>
+<ellipse cx="170" cy="340" rx="30" ry="70"
+transform="rotate(60 170 340)"/>
+
+<ellipse cx="70" cy="340" rx="30" ry="70"
+transform="rotate(-60 70 340)"/>
+
+</g>
+
+<!-- ORANGE FLOWER -->
+
+<g>
+
+<circle cx="320" cy="380" r="50"
+fill="#fb8500"/>
+
+<circle cx="320" cy="380" r="28"
+fill="#ffd166"/>
+
+</g>
+
+<!-- PURPLE FLOWER -->
+
+<g fill="#7b2cbf">
+
+<ellipse cx="240" cy="430" rx="28" ry="70"/>
+<ellipse cx="240" cy="430" rx="28" ry="70"
+transform="rotate(72 240 430)"/>
+
+<ellipse cx="240" cy="430" rx="28" ry="70"
+transform="rotate(144 240 430)"/>
+
+<ellipse cx="240" cy="430" rx="28" ry="70"
+transform="rotate(216 240 430)"/>
+
+<ellipse cx="240" cy="430" rx="28" ry="70"
+transform="rotate(288 240 430)"/>
+
+</g>
+
+</svg>
+
+</div>
+
+<div class="note">
+
+Dear You,
+
+<br><br>
+
+These flowers are for you 🌸
+
+<br>
+
+Hope they make your day a little brighter 💖
+
+<div class="signature">
+
+Sincerely,
+
+<br>
+
+someone who cares
+
+</div>
+
+</div>
+
+<button onclick="love()">
+
+Click Me 🤍
+
+</button>
 
 </div>
 
@@ -386,7 +379,7 @@ button{
 
 function love(){
 
-    for(let i=0;i<25;i++){
+    for(let i=0;i<30;i++){
 
         const heart =
         document.createElement('div');
@@ -401,7 +394,7 @@ function love(){
         heart.style.top = '100%';
 
         heart.style.fontSize =
-        Math.random() * 30 + 20 + 'px';
+        Math.random() * 25 + 15 + 'px';
 
         document.body.appendChild(heart);
 
